@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-import Header from './Header';
+import Header from './Header.js';
 import { Helmet } from 'react-helmet';
 
 const overwrittenTheme = responsiveFontSizes(createMuiTheme({

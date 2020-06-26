@@ -4,6 +4,8 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import makeStyles from '@material-ui/core/styles/makeStyles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useTheme from '@material-ui/styles/useTheme';
 
 const useStyles = makeStyles({
 	links: {
@@ -43,6 +45,8 @@ const barLinks = [
 
 export default function Header() {
 	const classes = useStyles();
+	const theme = useTheme();
+	const xsScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
 	const buttonGroup = barLinks.map((item, i) => {
 		if (item.name === 'resume') {
@@ -67,12 +71,22 @@ export default function Header() {
 	});
 
 	return (
-		<Container maxWidth='md' style={{ paddingTop: '40px' }}>
-			<Box display='flex' justifyContent='space-between' alignItems='flex-end'>
+		<Container maxWidth='sm' style={{ padding: '40px 20px' }}>
+			<Box
+				display='flex'
+				flexDirection={xsScreen ? 'column' : 'row'}
+				justifyContent='space-between'
+				alignItems={xsScreen ? 'flex-start' : 'flex-end'}
+			>
 				<Typography variant='h1'>
 					<Link to='/' className={classes.links}>jamie liu</Link>
 				</Typography>
-				<Box display='flex' justifyContent='flex-end' alignItems='center'>
+				<Box
+					display='flex'
+					justifyContent={xsScreen ? 'flex-start' : 'flex-end'}
+					alignItems={xsScreen ? 'flex-start' : 'center'}
+					flexWrap={xsScreen ? 'wrap' : null}
+				>
 					{buttonGroup}
 				</Box>
 			</Box>

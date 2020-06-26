@@ -7,45 +7,60 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-import Header from './header';
-import './layout.css';
+import Header from './Header';
+import { Helmet } from 'react-helmet';
 
-const Layout = ({ children }) => {
-	const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-	`);
+const overwrittenTheme = responsiveFontSizes(createMuiTheme({
+	typography: {
+		fontSize: 14,
+		fontFamily: '"Source Serif Pro", serif',
+		h1: {
+			fontFamily: '"Source Serif Pro", serif',
+			fontSize: '3rem'
+		},
+		h2: {
+			fontFamily: '"Source Serif Pro", serif',
+			fontSize: '2.5rem'
+		},
+		h3: {
+			fontFamily: '"Source Serif Pro", serif',
+			fontSize: '2rem'
+		},
+		h4: {
+			fontFamily: '"Source Serif Pro", serif',
+			fontSize: '1.8rem'
+		},
+		h5: {
+			fontFamily: '"Source Serif Pro", serif',
+			fontSize: '1.5rem'
+		},
+		h6: {
+			fontFamily: '"Source Serif Pro", serif',
+			fontSize: '1.3rem'
+		},
+		body1: { fontFamily: '"Source Sans Pro", sans-serif' },
+		button: { fontFamily: '"Source Sans Pro", sans-serif' }
+	}
+}));
 
+const Layout = ({ children, selected }) => {
 	return (
-		<>
-			<Header siteTitle={data.site.siteMetadata.title} />
-			<div
-				style={{
-					margin: `0 auto`,
-					maxWidth: 960,
-					padding: `0 1.0875rem 1.45rem`
-				}}
-			>
-				<main>{children}</main>
-				<footer>
-					© {new Date().getFullYear()}, Built with
-					{` `}
-					<a href='https://www.gatsbyjs.org'>Gatsby</a>
-				</footer>
-			</div>
-		</>
+		<MuiThemeProvider theme={overwrittenTheme}>
+			<Helmet>
+				<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+				<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+			</Helmet>
+			<Header selected={selected} />
+			<main>{children}</main>
+		</MuiThemeProvider>
 	);
 };
 
 Layout.propTypes = {
-	children: PropTypes.node.isRequired
+	children: PropTypes.node.isRequired,
+	selected: PropTypes.string.isRequired
 };
 
 export default Layout;

@@ -1,9 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { Link } from 'gatsby';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
@@ -12,10 +10,14 @@ const useStyles = makeStyles({
 		color: 'black',
 		padding: '1px',
 		margin: '3px',
-		lineHeight: '1rem'
+		textDecoration: 'none',
+		'&:hover': {
+			color: 'black',
+			textDecoration: 'underline'
+		}
 	},
 	selected: {
-		background: 'linear-gradient(0deg,rgba(255,255,255,0) 0%, #ffdbd9 0%)'
+		background: 'linear-gradient(0deg,rgba(255,255,255,0) 10%, #ffdbd9 10%)'
 	}
 });
 
@@ -29,31 +31,35 @@ const barLinks = [
 		name: 'projects'
 	},
 	{
+		link: '/teaching',
+		name: 'teaching'
+	},
+	{
 		link: '/resume.pdf',
 		name: 'resume',
 		newTab: true
-	},
-	{
-		link: '/teaching',
-		name: 'teaching'
 	}
 ];
 
-export default function Header(props) {
+export default function Header() {
 	const classes = useStyles();
 
 	const buttonGroup = barLinks.map((item, i) => {
+		if (item.name === 'resume') {
+			return <a href={item.link} target='_blank' rel="noopener noreferrer" className={classes.links}>
+				<Typography variant='h6'>
+					{item.name}
+				</Typography>
+			</a>;
+		}
 		return (
 			<Box key={i} display='flex' alignItems='center'>
 				<Link
-					variant='h6'
-					href={item.link}
-					className={props.selected === barLinks[i].name ?
-						classNames(classes.selected, classes.links) :
-						classes.links }
-					target={item.name === 'resume' ? '_blank' : null}
+					to={item.link}
+					activeClassName={classes.selected}
+					className={classes.links}
 				>
-					{item.name}
+					<Typography variant='h6' >{item.name}</Typography>
 				</Link>
 				{i === barLinks.length - 1 ? null : <Typography variant='h6'>/</Typography>}
 			</Box>
@@ -63,7 +69,9 @@ export default function Header(props) {
 	return (
 		<Container maxWidth='md' style={{ paddingTop: '40px' }}>
 			<Box display='flex' justifyContent='space-between' alignItems='flex-end'>
-				<Link variant='h1' style={{ color: 'black' }} href='/'>jamie liu</Link>
+				<Typography variant='h1'>
+					<Link to='/' className={classes.links}>jamie liu</Link>
+				</Typography>
 				<Box display='flex' justifyContent='flex-end' alignItems='center'>
 					{buttonGroup}
 				</Box>
@@ -71,7 +79,3 @@ export default function Header(props) {
 		</Container>
 	);
 }
-
-Header.propTypes = {
-	selected: PropTypes.string.isRequired
-};

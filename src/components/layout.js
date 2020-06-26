@@ -45,22 +45,21 @@ const overwrittenTheme = responsiveFontSizes(createMuiTheme({
 	}
 }));
 
-const Layout = ({ children, selected }) => {
+const Layout = ({ children }) => {
 	return (
 		<MuiThemeProvider theme={overwrittenTheme}>
 			<Helmet>
 				<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
 				<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
 			</Helmet>
-			<Header selected={selected} />
+			<Header />
 			<main>{children}</main>
 		</MuiThemeProvider>
 	);
 };
 
 Layout.propTypes = {
-	children: PropTypes.node.isRequired,
-	selected: PropTypes.string.isRequired
+	children: PropTypes.node.isRequired
 };
 
 export default Layout;

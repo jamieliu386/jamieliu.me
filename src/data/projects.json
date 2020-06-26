@@ -1,5 +1,23 @@
 [
 	{
-		"title": "hello"
+		"title": "passworks",
+		"desc": "An educational module to teach students about the importance of password security.",
+		"tech": "React.js, Material-UI",
+		"github": "https://github.com/uclaacm/passworks",
+		"link": "https://passworks.uclaacm.com"
+	},
+	{
+		"title": "Teach LA Code Editor",
+		"desc": "A web IDE made for K–12 students learning Python, HTML, and Processing.",
+		"tech": "React.js, Redux, Node.js, Firebase",
+		"github": "https://github.com/uclaacm/TeachLAFrontend",
+		"link": "https://editor.uclaacm.com/"
+	},
+	{
+		"title": "Hack on the Hill Website",
+		"desc": "The website for UCLA’s premier beginner-friendly hackathon, Hack on the Hill (HOTH).",
+		"tech": "Gatsby, Material-UI",
+		"github": "https://github.com/uclaacm/hoth.uclaacm.com",
+		"link": "https://hoth.uclaacm.com/"
 	}
 ]

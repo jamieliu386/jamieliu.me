@@ -24,7 +24,15 @@ module.exports = {
 				path: `${__dirname}/src/data/`
 			}
 		},
-		'gatsby-plugin-sass',
+		{
+			resolve: 'gatsby-plugin-sass',
+			options: {
+				// Override the file regex for SASS
+				sassRuleTest: /\.global\.s(a|c)ss$/,
+				// Override the file regex for CSS modules
+				sassRuleModulesTest: /\.module\.s(a|c)ss$/
+			}
+		},
 		{
 			resolve: 'gatsby-plugin-manifest',
 			/* eslint-disable camelcase */

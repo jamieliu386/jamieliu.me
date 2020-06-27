@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import MuiTypography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/styles/withStyles';
 
-import '../../styles/Home.module.scss';
+import styles from '../../styles/Home.module.scss';
 
 const Typography = withStyles({
 	root: {
@@ -23,8 +23,9 @@ export default function Home() {
 			</Typography>
 			<Typography variant='body1' component='p'>
 				In my free time, I love cooking, baking, watching shows, and <a
-					href='https://open.spotify.com/user/jamieliu386' target='_blank'
-					rel='noopener noreferrer'>listening to music</a>.
+					className={styles.link}
+					href='https://open.spotify.com/user/jamieliu386'
+					target='_blank' rel='noopener noreferrer'>listening to music</a>.
 			</Typography>
 		</Container>
 	);

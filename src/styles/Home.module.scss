@@ -1,11 +1,9 @@
 @use '../utilities/variables' as vars;
 
-main {
-	a {
+.link {
 	color: black;
-	}
+}
 
-	a:hover {
+.link:hover {
 		background-color: vars.$purple;
-	}
 }

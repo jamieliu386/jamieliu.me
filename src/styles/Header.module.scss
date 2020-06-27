@@ -1,9 +1,9 @@
 @use '../utilities/variables' as v;
 
 .active {
-	background-color: v.$pink;
+	background: linear-gradient(0deg, white 15%, v.$pink 15%);
 	:hover {
-		background-color: v.$pink;
+		background: linear-gradient(0deg, white 15%, v.$pink 15%);
 		text-decoration: underline;
 	}
 }

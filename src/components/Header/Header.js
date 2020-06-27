@@ -18,7 +18,7 @@ export default function Header() {
 				display='flex'
 				flexDirection={xsScreen ? 'column' : 'row'}
 				justifyContent='space-between'
-				alignItems={xsScreen ? 'flex-start' : 'flex-end'}
+				alignItems={xsScreen ? 'flex-start' : 'baseline'}
 			>
 				<Link to='/' className={styles.link}>
 					<Typography variant='h1'>
@@ -28,19 +28,19 @@ export default function Header() {
 				<Box
 					display='flex'
 					justifyContent={xsScreen ? 'flex-start' : 'flex-end'}
-					alignItems={xsScreen ? 'flex-start' : 'center'}
+					alignItems='center'
 					flexWrap={xsScreen ? 'wrap' : null}
 				>
 					<Link to='/' activeClassName={styles.active} className={styles.link}>
-						<Typography variant='h6' >about</Typography>
+						<Typography variant='h6'>about</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>
 					<Link to='/projects' activeClassName={styles.active} className={styles.link}>
-						<Typography variant='h6' >projects</Typography>
+						<Typography variant='h6'>projects</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>
 					<Link to='/teaching' activeClassName={styles.active} className={styles.link}>
-						<Typography variant='h6' >teaching</Typography>
+						<Typography variant='h6'>teaching</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>
 					<a href='/resume.pdf' target='_blank' rel="noopener noreferrer" className={styles.link}>

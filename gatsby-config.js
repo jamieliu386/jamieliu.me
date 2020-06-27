@@ -5,6 +5,9 @@ module.exports = {
 		author: '@jamieliu386'
 	},
 	plugins: [
+		'gatsby-transformer-sharp',
+		'gatsby-plugin-sharp',
+		'gatsby-transformer-json',
 		'gatsby-plugin-material-ui',
 		'gatsby-plugin-react-helmet',
 		{
@@ -14,7 +17,6 @@ module.exports = {
 				path: `${__dirname}/src/images`
 			}
 		},
-		'gatsby-transformer-json',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
@@ -22,9 +24,7 @@ module.exports = {
 				path: `${__dirname}/src/data/`
 			}
 		},
-		'gatsby-transformer-sharp',
 		'gatsby-plugin-sass',
-		'gatsby-plugin-sharp',
 		{
 			resolve: 'gatsby-plugin-manifest',
 			/* eslint-disable camelcase */

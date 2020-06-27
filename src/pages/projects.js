@@ -2,12 +2,12 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Projects from '../components/Projects/Projects';
+import ProjectPage from '../components/ProjectPage/ProjectPage';
 
-const ProjectPage = () =>
+const Projects = () =>
 	<Layout>
 		<SEO title='Projects' />
-		<Projects />
+		<ProjectPage />
 	</Layout>;
 
-export default ProjectPage;
+export default Projects;

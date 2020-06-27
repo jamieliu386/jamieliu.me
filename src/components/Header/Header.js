@@ -6,6 +6,8 @@ import Box from '@material-ui/core/Box';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import useTheme from '@material-ui/styles/useTheme';
 
+import styles from '../../styles/Header.module.scss';
+
 export default function Header() {
 	const theme = useTheme();
 	const xsScreen = useMediaQuery(theme.breakpoints.down('xs'));
@@ -18,7 +20,7 @@ export default function Header() {
 				justifyContent='space-between'
 				alignItems={xsScreen ? 'flex-start' : 'flex-end'}
 			>
-				<Link to='/' className='header-link'>
+				<Link to='/' className={styles.link}>
 					<Typography variant='h1'>
 						jamie liu
 					</Typography>
@@ -29,19 +31,19 @@ export default function Header() {
 					alignItems={xsScreen ? 'flex-start' : 'center'}
 					flexWrap={xsScreen ? 'wrap' : null}
 				>
-					<Link to='/' activeClassName='active-header-link' className='header-link'>
+					<Link to='/' activeClassName={styles.active} className={styles.link}>
 						<Typography variant='h6' >about</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>
-					<Link to='/projects' activeClassName='active-header-link' className='header-link'>
+					<Link to='/projects' activeClassName={styles.active} className={styles.link}>
 						<Typography variant='h6' >projects</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>
-					<Link to='/teaching' activeClassName='active-header-link' className='header-link'>
+					<Link to='/teaching' activeClassName={styles.active} className={styles.link}>
 						<Typography variant='h6' >teaching</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>
-					<a href='/resume.pdf' target='_blank' rel="noopener noreferrer" className='header-link'>
+					<a href='/resume.pdf' target='_blank' rel="noopener noreferrer" className={styles.link}>
 						<Typography variant='h6'>résumé</Typography>
 					</a>
 				</Box>

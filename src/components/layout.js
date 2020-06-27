@@ -1,5 +1,4 @@
 import React from 'react';
-import './layout.scss';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 

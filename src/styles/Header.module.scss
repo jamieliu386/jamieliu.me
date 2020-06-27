@@ -1,0 +1,20 @@
+@use '../utilities/variables' as v;
+
+.active {
+	background-color: v.$pink;
+	:hover {
+		background-color: v.$pink;
+		text-decoration: underline;
+	}
+}
+
+.link {
+	color: black;
+	padding: 1px;
+	margin: 3px;
+	text-decoration: none;
+	:hover {
+		color: black;
+		text-decoration: underline;
+	}
+}

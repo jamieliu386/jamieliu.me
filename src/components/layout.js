@@ -35,18 +35,24 @@ const overwrittenTheme = responsiveFontSizes(createMuiTheme({
 		},
 		body1: {
 			fontFamily: '"Source Sans Pro", sans-serif',
-			fontSize: '1.3em'
+			fontSize: '1em'
 		},
 		button: { fontFamily: '"Source Sans Pro", sans-serif' }
-	}
+	},
+	props: {
+		MuiButtonBase: {
+			disableRipple: true // remove all ripple effects
+		}
+	},
+	shadows: ['none'] // remove box shadows
 }));
 
 const Layout = ({ children }) => {
 	return (
 		<MuiThemeProvider theme={overwrittenTheme}>
 			<Helmet>
-				<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
-				<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+				<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
+				<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
 			</Helmet>
 			<Header />
 			<main>{children}</main>

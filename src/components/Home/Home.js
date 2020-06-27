@@ -7,7 +7,8 @@ import styles from '../../styles/Home.module.scss';
 
 const Typography = withStyles({
 	root: {
-		padding: '10px 0px'
+		padding: '10px 0px',
+		fontSize: '1.3rem'
 	}
 })(MuiTypography);
 

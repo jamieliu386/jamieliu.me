@@ -1,0 +1,23 @@
+@use '../utilities/variables' as vars;
+
+.card {
+	margin: 20px 0px;
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: 20px;
+}
+
+.icon {
+	color: black;
+	padding: 5px;
+}
+
+.tech {
+	color: rgb(116, 116, 116);
+	font-style: italic;
+	padding-bottom: 5px;
+}
+
+.desc {
+	padding-top: 5px;
+}

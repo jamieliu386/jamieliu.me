@@ -23,8 +23,8 @@ export default function Home() {
 			</Typography>
 			<Typography variant='body1' component='p'>
 				In my free time, I love cooking, baking, watching shows, and <a
-					href='https://open.spotify.com/user/jamieliu386'>listening to
-				music</a>.
+					href='https://open.spotify.com/user/jamieliu386' target='_blank'
+					rel='noopener noreferrer'>listening to music</a>.
 			</Typography>
 		</Container>
 	);

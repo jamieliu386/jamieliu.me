@@ -35,11 +35,11 @@ export default function Header() {
 						<Typography variant='h6'>about</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>
-					<Link to='/projects' activeClassName={styles.active} className={styles.link}>
+					<Link to='/projects/' activeClassName={styles.active} className={styles.link}>
 						<Typography variant='h6'>projects</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>
-					<Link to='/teaching' activeClassName={styles.active} className={styles.link}>
+					<Link to='/teaching/' activeClassName={styles.active} className={styles.link}>
 						<Typography variant='h6'>teaching</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>

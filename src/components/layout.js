@@ -1,11 +1,5 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
+import './layout.scss';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
@@ -40,7 +34,10 @@ const overwrittenTheme = responsiveFontSizes(createMuiTheme({
 			fontFamily: '"Source Serif Pro", serif',
 			fontSize: '1.3rem'
 		},
-		body1: { fontFamily: '"Source Sans Pro", sans-serif' },
+		body1: {
+			fontFamily: '"Source Sans Pro", sans-serif',
+			fontSize: '1.3em'
+		},
 		button: { fontFamily: '"Source Sans Pro", sans-serif' }
 	}
 }));

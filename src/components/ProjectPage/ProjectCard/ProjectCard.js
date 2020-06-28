@@ -71,5 +71,6 @@ ProjectCard.propTypes = {
 	dim: PropTypes.shape({
 		height: PropTypes.number.isRequired,
 		width: PropTypes.number.isRequired
-	}).isRequired
+	}).isRequired,
+	info: PropTypes.arrayOf(PropTypes.string).isRequired
 };

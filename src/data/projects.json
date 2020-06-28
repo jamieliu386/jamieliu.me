@@ -10,7 +10,10 @@
 			"height": 510.0999756,
 			"width": 1079.6644287
 		},
-		"info": "more information coming soon",
+		"info": [
+			{ "line" : "more information coming soon" },
+			{ "line" : "bleh" }
+		],
 		"img": "../images/projects/passworks.svg"
 	},
 	{
@@ -24,7 +27,9 @@
 			"height": 521.971,
 			"width": 1046.667
 		},
-		"info": "more information coming soon",
+		"info": [
+			{ "line" : "more information coming soon" }
+		],
 		"img": "../images/projects/editor.svg"
 	},
 	{
@@ -38,7 +43,9 @@
 			"height": 580,
 			"width": 979.893
 		},
-		"info": "more information coming soon",
+		"info": [
+			{ "line" : "more information coming soon" }
+		],
 		"img": "../images/projects/hoth.svg"
 	}
 ]

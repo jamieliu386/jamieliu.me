@@ -10,9 +10,13 @@ import LinkIcon from '@material-ui/icons/Link';
 import styles from '../../../styles/Project.module.scss';
 
 export default function ProjectInfo(props) {
-	const { title, desc, tech, github, link, img, dim, handleClose, open } = props;
+	const { title, desc, tech, github, link, img, dim, handleClose, open, info } = props;
 
 	const isSmall = useMediaQuery('(max-width:500px)');
+
+	const details = info.map(item => {
+		return <Typography variant='body1' key={item.line}><li>{item.line}</li></Typography>;
+	});
 
 	return (
 		<Dialog onClose={handleClose}
@@ -45,6 +49,9 @@ export default function ProjectInfo(props) {
 			<Typography variant='body1' className={styles.desc} id='modal-description'>
 				{desc}
 			</Typography>
+			<ul>
+				{details}
+			</ul>
 			<SVGImg src={img} width={dim.width} height={dim.height} style={{ width: '100%' }}/>
 			<span onClick={handleClose} style={{ cursor: 'pointer', textAlign: 'right' }}>
 				<Typography>close</Typography>
@@ -64,6 +71,7 @@ ProjectInfo.propTypes = {
 		height: PropTypes.number.isRequired,
 		width: PropTypes.number.isRequired
 	}).isRequired,
+	info: PropTypes.arrayOf(PropTypes.string).isRequired,
 	handleClose: PropTypes.func.isRequired,
 	open: PropTypes.bool.isRequired
 };

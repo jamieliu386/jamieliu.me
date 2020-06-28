@@ -22,22 +22,26 @@ const Projects = () => {
 						height
 						width
 					}
+					info {
+						line
+					}
 				}
 			}
 		}
 	`);
 
 	const projectsList = data.allProjectsJson.nodes;
-	const projectCards = projectsList.map(({ id, title, desc, tech, github, link, img, dim }) => {
+	const projectCards = projectsList.map(({ title, desc, tech, github, link, img, dim, info }) => {
 		return <ProjectCard
-			key={id}
+			key={title}
 			title={title}
 			desc={desc}
 			tech={tech}
 			github={github}
 			link={link}
 			img={img.publicURL}
-			dim={dim} />;
+			dim={dim}
+			info={info} />;
 	});
 
 	return (

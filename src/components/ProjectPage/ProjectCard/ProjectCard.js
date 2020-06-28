@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
-import Img from 'gatsby-image';
+import SVGImg from '../../SVGImg';
 
 import styles from '../../../styles/ProjectCard.module.scss';
 
@@ -15,7 +15,8 @@ export default function ProjectCard({
 	tech,
 	github,
 	link,
-	img
+	img,
+	dim
 }) {
 	return (
 		<Paper className={styles.card}>
@@ -37,7 +38,7 @@ export default function ProjectCard({
 				</Box>
 			</Box>
 			<Typography variant='body1' className={styles.tech}>{tech}</Typography>
-			<Img fluid={img} />
+			<SVGImg src={img} width={dim.width} height={dim.height} />
 			<Typography variant='body1' className={styles.desc}>{desc}</Typography>
 		</Paper>
 	);
@@ -49,5 +50,9 @@ ProjectCard.propTypes = {
 	tech: PropTypes.string.isRequired,
 	github: PropTypes.string.isRequired,
 	link: PropTypes.string.isRequired,
-	img: PropTypes.object.isRequired
+	img: PropTypes.string.isRequired,
+	dim: PropTypes.shape({
+		height: PropTypes.number.isRequired,
+		width: PropTypes.number.isRequired
+	}).isRequired
 };

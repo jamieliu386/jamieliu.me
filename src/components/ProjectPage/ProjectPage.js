@@ -7,28 +7,28 @@ import ProjectCard from './ProjectCard/ProjectCard';
 
 const Projects = () => {
 	const data = useStaticQuery(graphql`
-	query ProjectsQuery {
-		allProjectsJson {
-			nodes {
-				title
-				desc
-				tech
-				github
-				link
-				img {
-					childImageSharp {
-						fluid {
-							...GatsbyImageSharpFluid
-						}
+		{
+			allProjectsJson {
+				nodes {
+					title
+					desc
+					tech
+					github
+					link
+					img {
+						publicURL
+					}
+					dim {
+						height
+						width
 					}
 				}
 			}
 		}
-	}
-`);
+	`);
 
 	const projectsList = data.allProjectsJson.nodes;
-	const projectCards = projectsList.map(({ title, desc, tech, github, link, img }) => {
+	const projectCards = projectsList.map(({ title, desc, tech, github, link, img, dim }) => {
 		return <ProjectCard
 			key={title}
 			title={title}
@@ -36,7 +36,8 @@ const Projects = () => {
 			tech={tech}
 			github={github}
 			link={link}
-			img={img.childImageSharp.fluid} />;
+			img={img.publicURL}
+			dim={dim} />;
 	});
 
 	return (

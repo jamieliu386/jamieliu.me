@@ -28,9 +28,9 @@ const Projects = () => {
 	`);
 
 	const projectsList = data.allProjectsJson.nodes;
-	const projectCards = projectsList.map(({ title, desc, tech, github, link, img, dim }) => {
+	const projectCards = projectsList.map(({ id, title, desc, tech, github, link, img, dim }) => {
 		return <ProjectCard
-			key={title}
+			key={id}
 			title={title}
 			desc={desc}
 			tech={tech}

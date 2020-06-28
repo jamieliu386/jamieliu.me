@@ -1,42 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkIcon from '@material-ui/icons/Link';
-import MoreIcon from '@material-ui/icons/MoreHoriz';
+import Dialog from '@material-ui/core/Dialog';
+import Typography from '@material-ui/core/Typography';
 import SVGImg from '../../SVGImg';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import ProjectInfo from '../ProjectInfo/ProjectInfo';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkIcon from '@material-ui/icons/Link';
 import styles from '../../../styles/Project.module.scss';
 
-export default function ProjectCard(props) {
-	const { title, desc, tech, github, link, img, dim } = props;
-
-	// modal stuff
-	const [open, setOpen] = useState(false);
-	const handleClickOpen = () => {
-		setOpen(true);
-	};
-	const handleClose = () => {
-		setOpen(false);
-	};
+export default function ProjectInfo(props) {
+	const { title, desc, tech, github, link, img, dim, handleClose, open } = props;
 
 	const isSmall = useMediaQuery('(max-width:500px)');
 
 	return (
-		<Paper className={styles.card}>
+		<Dialog onClose={handleClose}
+			scroll='paper'
+			aria-labelledby='modal-title'
+			aria-describedby='modal-description'
+			open={open}
+		>
 			<Box
 				display='flex'
 				flexDirection={isSmall ? 'column' : 'row'}
 				justifyContent='space-between'
 				alignItems={isSmall ? 'flex-start' : 'center'}
 			>
-				<Typography variant='body1' style={{ fontSize: '1.5rem', fontWeight: 600 }}>
+				<Typography variant='body1' style={{ fontSize: '1.5rem', fontWeight: 600 }} id='modal-title'>
 					{title}
 				</Typography>
-				<Box>
+				<Box display='flex'>
 					<a href={github} className={styles.icon} target='_blank'
 						rel='noopener noreferrer'>
 						<GitHubIcon titleAccess='code'/>
@@ -45,23 +39,21 @@ export default function ProjectCard(props) {
 						rel='noopener noreferrer'>
 						<LinkIcon titleAccess='project'/>
 					</a>
-					<span onClick={handleClickOpen} style={{ cursor: 'pointer' }}>
-						<MoreIcon />
-					</span>
 				</Box>
 			</Box>
 			<Typography variant='body1' className={styles.tech}>{tech}</Typography>
-			<SVGImg src={img} width={dim.width} height={dim.height} />
-			<Typography variant='body1' className={styles.desc}>{desc}</Typography>
-			<ProjectInfo {...props}
-				handleClose={handleClose}
-				open={open}
-			/>
-		</Paper>
+			<Typography variant='body1' className={styles.desc} id='modal-description'>
+				{desc}
+			</Typography>
+			<SVGImg src={img} width={dim.width} height={dim.height} style={{ width: '100%' }}/>
+			<span onClick={handleClose} style={{ cursor: 'pointer', textAlign: 'right' }}>
+				<Typography>close</Typography>
+			</span>
+		</Dialog>
 	);
 }
 
-ProjectCard.propTypes = {
+ProjectInfo.propTypes = {
 	title: PropTypes.string.isRequired,
 	desc: PropTypes.string.isRequired,
 	tech: PropTypes.string.isRequired,
@@ -71,5 +63,7 @@ ProjectCard.propTypes = {
 	dim: PropTypes.shape({
 		height: PropTypes.number.isRequired,
 		width: PropTypes.number.isRequired
-	}).isRequired
+	}).isRequired,
+	handleClose: PropTypes.func.isRequired,
+	open: PropTypes.bool.isRequired
 };

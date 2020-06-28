@@ -44,7 +44,15 @@ const overwrittenTheme = responsiveFontSizes(createMuiTheme({
 			disableRipple: true // remove all ripple effects
 		}
 	},
-	shadows: ['none'] // remove box shadows
+	shadows: ['none'], // remove box shadows
+	overrides: {
+		MuiDialog: {
+			paper: {
+				padding: '10px 20px',
+				width: 600
+			}
+		}
+	}
 }));
 
 const Layout = ({ children }) => {

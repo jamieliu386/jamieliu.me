@@ -35,7 +35,9 @@ export default function Header() {
 						<Typography variant='h6'>about</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>
-					<Link to='/projects/' activeClassName={styles.active} className={styles.link}>
+					<Link to='/projects/' activeClassName={styles.active} className={styles.link}
+						partiallyActive={true}
+					>
 						<Typography variant='h6'>projects</Typography>
 					</Link>
 					<Typography variant='h6'>/</Typography>

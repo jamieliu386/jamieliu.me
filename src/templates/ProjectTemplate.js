@@ -1,59 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, navigate, PageRenderer, Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import SVGImg from '../components/SVGImg';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Modal from 'react-modal';
 import styles from '../styles/ProjectCard.module.scss';
-import './style.css';
 
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
-import CloseIcon from '@material-ui/icons/Close';
-
-Modal.setAppElement(`#___gatsby`);
-
-const modalStyles = {
-	overlay: {
-		backgroundColor: 'rgba(0, 0, 0, 0.58)'
-	},
-	content: {
-		position: 'relative',
-		top: 'auto',
-		left: 'auto',
-		right: 'auto',
-		bottom: 'auto',
-		maxWidth: '500px',
-		margin: '32px auto',
-		padding: '20px 40px',
-		border: 0
-	}
-};
 
 function Project({ data }) {
 	const { title, desc, tech, github, link, img, dim } = data.allProjectsJson.nodes[0];
-	const [modalOpen, setModalOpen] = useState(true);
-	const modalCloseTimeout = 300;
-
-	const closeModal = () => {
-		setModalOpen(false);
-		setTimeout(() => navigate(`/projects/`), modalCloseTimeout);
-	};
 
 	return (
-		<Layout header={false}>
+		<Layout>
 			<SEO title={title} />
-			<PageRenderer key={'/projects/'} location={{ pathname: '/projects/' }} />
-			<Modal
-				isOpen={modalOpen}
-				onRequestClose={closeModal}
-				style={modalStyles}
-				contentLabel='modal'
-				closeTimeoutMS={modalCloseTimeout}
-			>
+			<Container maxWidth='sm'>
 				<Box display='flex' justifyContent='space-between' alignItems='center'>
 					<Typography variant='h4' style={{ fontSize: '2rem', fontWeight: 600 }}>
 						{title}
@@ -67,19 +32,13 @@ function Project({ data }) {
 							rel='noopener noreferrer'>
 							<LinkIcon titleAccess='project'/>
 						</a>
-						<Link to='/projects/' aria-label='close modal' className={styles.icon}
-							onClick={e => {
-								e.preventDefault();
-								closeModal();
-							}}>
-							<CloseIcon />
-						</Link>
 					</Box>
 				</Box>
 				<Typography className={styles.tech}>{tech}</Typography>
 				<Typography className={styles.desc}>{desc}</Typography>
 				<SVGImg src={img.publicURL} width={dim.width} height={dim.height} />
-			</Modal>
+				<Link to={'/projects/'}>back</Link>
+			</Container>
 		</Layout>
 	);
 }

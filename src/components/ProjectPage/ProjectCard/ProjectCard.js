@@ -42,7 +42,7 @@ export default function ProjectCard({
 			<Typography variant='body1' className={styles.tech}>{tech}</Typography>
 			<SVGImg src={img} width={dim.width} height={dim.height} />
 			<Typography variant='body1' className={styles.desc}>{desc}</Typography>
-			<Link to={`/projects/${id}`}>go</Link>
+			<Link to={`/projects/${id}`}>details</Link>
 		</Paper>
 	);
 }

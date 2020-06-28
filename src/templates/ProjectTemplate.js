@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { graphql, navigate, PageRenderer, Link } from 'gatsby';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
 import SVGImg from '../components/SVGImg';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Modal from 'react-modal';
 import styles from '../styles/ProjectCard.module.scss';
+import './style.css';
 
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
@@ -26,7 +26,7 @@ const modalStyles = {
 		left: 'auto',
 		right: 'auto',
 		bottom: 'auto',
-		maxWidth: '960px',
+		maxWidth: '500px',
 		margin: '32px auto',
 		padding: '20px 40px',
 		border: 0
@@ -44,44 +44,42 @@ function Project({ data }) {
 	};
 
 	return (
-		<Layout>
+		<Layout header={false}>
 			<SEO title={title} />
-			<Container maxWidth='sm'>
-				<PageRenderer key={'/'} location={{ pathname: '/' }} />
-				<Modal
-					isOpen={modalOpen}
-					onRequestClose={closeModal}
-					style={modalStyles}
-					contentLabel='modal'
-					closeTimeoutMS={modalCloseTimeout}
-				>
-					<Box display='flex' justifyContent='space-between' alignItems='center'>
-						<Typography variant='h4' style={{ fontSize: '2rem', fontWeight: 600 }}>
-							{title}
-						</Typography>
-						<Box>
-							<a href={github} className={styles.icon} target='_blank'
-								rel='noopener noreferrer'>
-								<GitHubIcon titleAccess='code'/>
-							</a>
-							<a href={link} className={styles.icon} target='_blank'
-								rel='noopener noreferrer'>
-								<LinkIcon titleAccess='project'/>
-							</a>
-							<Link to='/projects/' aria-label='close modal' className={styles.icon}
-								onClick={e => {
-									e.preventDefault();
-									closeModal();
-								}}>
-								<CloseIcon />
-							</Link>
-						</Box>
+			<PageRenderer key={'/projects/'} location={{ pathname: '/projects/' }} />
+			<Modal
+				isOpen={modalOpen}
+				onRequestClose={closeModal}
+				style={modalStyles}
+				contentLabel='modal'
+				closeTimeoutMS={modalCloseTimeout}
+			>
+				<Box display='flex' justifyContent='space-between' alignItems='center'>
+					<Typography variant='h4' style={{ fontSize: '2rem', fontWeight: 600 }}>
+						{title}
+					</Typography>
+					<Box>
+						<a href={github} className={styles.icon} target='_blank'
+							rel='noopener noreferrer'>
+							<GitHubIcon titleAccess='code'/>
+						</a>
+						<a href={link} className={styles.icon} target='_blank'
+							rel='noopener noreferrer'>
+							<LinkIcon titleAccess='project'/>
+						</a>
+						<Link to='/projects/' aria-label='close modal' className={styles.icon}
+							onClick={e => {
+								e.preventDefault();
+								closeModal();
+							}}>
+							<CloseIcon />
+						</Link>
 					</Box>
-					<Typography className={styles.tech}>{tech}</Typography>
-					<Typography className={styles.desc}>{desc}</Typography>
-					<SVGImg src={img.publicURL} width={dim.width} height={dim.height} />
-				</Modal>
-			</Container>
+				</Box>
+				<Typography className={styles.tech}>{tech}</Typography>
+				<Typography className={styles.desc}>{desc}</Typography>
+				<SVGImg src={img.publicURL} width={dim.width} height={dim.height} />
+			</Modal>
 		</Layout>
 	);
 }

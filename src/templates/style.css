@@ -1,0 +1,13 @@
+/* react-modal transitions */
+.ReactModal__Overlay {
+  overflow: auto;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+}
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}

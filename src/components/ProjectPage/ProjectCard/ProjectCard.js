@@ -6,10 +6,12 @@ import Paper from '@material-ui/core/Paper';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
 import SVGImg from '../../SVGImg';
+import { Link } from 'gatsby';
 
 import styles from '../../../styles/ProjectCard.module.scss';
 
 export default function ProjectCard({
+	id,
 	title,
 	desc,
 	tech,
@@ -40,11 +42,13 @@ export default function ProjectCard({
 			<Typography variant='body1' className={styles.tech}>{tech}</Typography>
 			<SVGImg src={img} width={dim.width} height={dim.height} />
 			<Typography variant='body1' className={styles.desc}>{desc}</Typography>
+			<Link to={`/projects/${id}`}>go</Link>
 		</Paper>
 	);
 }
 
 ProjectCard.propTypes = {
+	id: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 	desc: PropTypes.string.isRequired,
 	tech: PropTypes.string.isRequired,

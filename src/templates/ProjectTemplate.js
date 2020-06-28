@@ -2,15 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
+import SVGImg from '../components/SVGImg';
+
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkIcon from '@material-ui/icons/Link';
+
+import styles from '../styles/ProjectCard.module.scss';
 
 function Project({ data }) {
-	const node = data.allProjectsJson.nodes[0];
+	const { title, desc, tech, github, link, img, dim } = data.allProjectsJson.nodes[0];
 
 	return (
-		<div>
-			<Typography>{node.title}</Typography>
-			<Typography>{node.desc}</Typography>
-		</div>
+		<Container maxWidth='sm'>
+			<Box display='flex' justifyContent='space-between' alignItems='center'>
+				<Typography variant='h4' style={{ fontSize: '2rem', fontWeight: 600 }}>
+					{title}
+				</Typography>
+				<Box>
+					<a href={github} className={styles.icon} target='_blank'
+						rel='noopener noreferrer'>
+						<GitHubIcon titleAccess='code'/>
+					</a>
+					<a href={link} className={styles.icon} target='_blank'
+						rel='noopener noreferrer'>
+						<LinkIcon titleAccess='project'/>
+					</a>
+				</Box>
+			</Box>
+			<Typography className={styles.tech}>{tech}</Typography>
+			<Typography className={styles.desc}>{desc}</Typography>
+			<SVGImg src={img.publicURL} width={dim.width} height={dim.height} />
+		</Container>
 	);
 }
 

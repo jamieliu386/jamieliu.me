@@ -21,7 +21,7 @@ export default function ProjectCard({
 	return (
 		<Paper className={styles.card}>
 			<Box display='flex' justifyContent='space-between' alignItems='center'>
-				<div >
+				<div>
 					<Typography variant='body1' style={{ fontSize: '1.5rem', fontWeight: 600 }}>
 						{title}
 					</Typography>

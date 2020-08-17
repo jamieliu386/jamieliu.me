@@ -11,15 +11,15 @@
 			"width": 1079.6644287
 		},
 		"info": [
-			{ "line" : "more information coming soon" },
-			{ "line" : "bleh" }
+			{ "line" : "Designed and coded the interactive lessons, including an animated password guesser and animated text messages" },
+			{ "line" : "Implemented a custom React.js router with fluid transitions between lesson content" }
 		],
 		"img": "../images/projects/passworks.svg"
 	},
 	{
 		"id": "teach-la-editor",
 		"title": "Teach LA Code Editor",
-		"desc": "A web IDE made for K–12 students learning Python, HTML, and Processing.",
+		"desc": "A web IDE made for K–12 students learning Python, HTML, and Processing.js.",
 		"tech": "React.js, Redux, Node.js, Firebase",
 		"github": "https://github.com/uclaacm/TeachLAFrontend",
 		"link": "https://editor.uclaacm.com/",
@@ -28,7 +28,10 @@
 			"width": 1046.667
 		},
 		"info": [
-			{ "line" : "more information coming soon" }
+			{ "line" : "Added account management features allowing users to edit their display name and profile picture" },
+			{ "line" : "Implemented a view-only mode for programs, allowing them to be runnable but not editable" },
+			{ "line" : "Developed a feature allowing logged-in users to fork other people's shared programs" },
+			{ "line" : "Refactored code to improve component modularity and reusability" }
 		],
 		"img": "../images/projects/editor.svg"
 	},
@@ -36,7 +39,7 @@
 		"id": "hoth-website",
 		"title": "Hack on the Hill Website",
 		"desc": "The website for UCLA’s premier beginner-friendly hackathon, Hack on the Hill (HOTH).",
-		"tech": "Gatsby, Material-UI",
+		"tech": "Gatsby, Material-UI, GraphQL",
 		"github": "https://github.com/uclaacm/hoth.uclaacm.com",
 		"link": "https://hoth.uclaacm.com/",
 		"dim": {
@@ -44,8 +47,28 @@
 			"width": 979.893
 		},
 		"info": [
-			{ "line" : "more information coming soon" }
+			{ "line" : "Ramped up development by setting up a GitHub Actions-based CI and a Netlify-based deployment workflow" },
+			{ "line" : "Developed responsive pages compatible with desktop and mobile devices using Material-UI components" },
+			{ "line" : "Iterated on website design by collaborating with external designers" }
 		],
 		"img": "../images/projects/hoth.svg"
+	},
+	{
+		"id": "butterfly",
+		"title": "GL Butterfly",
+		"desc": "An animated butterfly, drawn with vanilla JavaScript, WebGL, and the HTML ‘canvas’ element.",
+		"tech": "WebGL, JavaScript, Linear Algebra",
+		"github": "https://github.com/jamieliu386/tgbutterfly",
+		"link": "https://jamieliu386.github.io/tgbutterfly/",
+		"dim": {
+			"height": 600,
+			"width": 1080
+		},
+		"info": [
+			{ "line" : "Drew the vertices of five independently animated parts of the butterfly’s body" },
+			{ "line" : "Computed affine transformations necessary to animate the butterfly in a consistent manner" },
+			{ "line" : "Ensured proper alignment of body parts at all times throughout the animation" }
+		],
+		"img": "../images/projects/butterfly.png"
 	}
 ]

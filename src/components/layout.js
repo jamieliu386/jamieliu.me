@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import { Helmet } from 'react-helmet';
 
 const overwrittenTheme = responsiveFontSizes(createMuiTheme({
@@ -64,6 +65,7 @@ const Layout = ({ children }) => {
 			</Helmet>
 			<Header />
 			<main>{children}</main>
+			<Footer />
 		</MuiThemeProvider>
 	);
 };

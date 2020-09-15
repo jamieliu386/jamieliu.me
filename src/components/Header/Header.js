@@ -38,10 +38,6 @@ export default function Header() {
 					<Link to='/projects/' activeClassName={styles.active} className={styles.link}>
 						<Typography variant='h6'>projects</Typography>
 					</Link>
-					{/* <Typography variant='h6'>/</Typography>
-					<Link to='/teaching/' activeClassName={styles.active} className={styles.link}>
-						<Typography variant='h6'>teaching</Typography>
-					</Link> */}
 					<Typography variant='h6'>/</Typography>
 					<a href='/resume.pdf' target='_blank' rel="noopener noreferrer" className={styles.link}>
 						<Typography variant='h6'>résumé</Typography>

@@ -2,7 +2,7 @@
 	{
 		"id": "passworks",
 		"title": "passworks",
-		"desc": "An educational module to teach students about the importance of password security.",
+		"desc": "A collection of educational modules to teach students about the importance of password security.",
 		"tech": "React.js, Material-UI",
 		"github": "https://github.com/uclaacm/passworks",
 		"link": "https://passworks.uclaacm.com",
@@ -11,8 +11,10 @@
 			"width": 1079.6644287
 		},
 		"info": [
-			{ "line" : "Designed and coded the interactive lessons, including an animated password guesser and animated text messages" },
-			{ "line" : "Implemented a custom React.js router with fluid transitions between lesson content" }
+			{ "line" : "Led the development of an interactive lesson structure with an animated brute-force password guesser and animated text messages" },
+			{ "line" : "Developed a declarative framework for creating lesson modules, making them easily extensible" },
+			{ "line" : "Implemented a custom React.js router with fluid transitions between lesson content" },
+			{ "line" : "Sought user feedback to improve on lesson content and presentation" }
 		],
 		"img": "../images/projects/passworks.svg"
 	},

@@ -19,7 +19,7 @@ export default function Home() {
 				Hi, my name is Jamie!
 			</Typography>
 			<Typography variant='body1' component='p'>
-				I&rsquo;m a rising senior studying computer science at UCLA. I&rsquo;m
+				I’m a senior studying computer science at UCLA. I’m
 				passionate about learning, building things, and helping other people.
 			</Typography>
 			<Typography variant='body1' component='p'>
@@ -27,6 +27,11 @@ export default function Home() {
 					className={styles.link}
 					href='https://open.spotify.com/user/jamieliu386'
 					target='_blank' rel='noopener noreferrer'>listening to music</a>.
+			</Typography>
+			<Typography>
+				Other assorted interests: <span title="[liŋˈɡwɪstɪks]" style={{
+					textDecoration: 'underline dotted'
+				}}>linguistics</span>, LaTeX, video games
 			</Typography>
 		</Container>
 	);

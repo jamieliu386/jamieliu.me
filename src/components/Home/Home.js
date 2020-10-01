@@ -18,7 +18,7 @@ const Typography = withStyles({
 export default function Home() {
 	const data = useStaticQuery(graphql`
 		{
-			catImages: allFile(filter: {relativePath: {glob:"cats/*"}}) {
+			catImages: allFile(filter: {relativePath: {glob: "cats/*"}}) {
 				nodes {
 					relativePath
 					childImageSharp {

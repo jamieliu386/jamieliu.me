@@ -43,8 +43,22 @@ export default function Home() {
 				Hi, my name is Jamie!
 			</Typography>
 			<Typography variant='body1' component='p'>
-				I’m a senior studying computer science at UCLA. I’m
-				passionate about learning, building things, and helping other people.
+				I’m a senior studying computer science at UCLA, with plans to
+				continue at UCLA for a Master’s degree in CS. I’m passionate
+				about learning, building things, and helping other people.
+			</Typography>
+			<Typography>
+				At UCLA, I’m an officer of <a href="https://hack.uclaacm.com/"
+					className={styles.link}>ACM Hack</a> and a lead developer for <a
+					href="https://teachla.uclaacm.com/"
+					className={styles.link}>ACM TeachLA</a>. I’ve also been a <a
+					href="https://ceils.ucla.edu/learningassistants/"
+					className={styles.link}>learning assistant</a> for
+				undergraduate courses on <a
+					href="https://polyarch.github.io/cs33/"
+					className={styles.link}>computer organization</a> and <a
+					href="http://web.cs.ucla.edu/classes/spring20/cs97-1/index.html"
+					className={styles.link}>software construction</a>.
 			</Typography>
 			<Typography variant='body1' component='p'>
 				In my free time, I love cooking, baking, watching shows, and <a

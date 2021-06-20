@@ -6,7 +6,7 @@ import MuiTypography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/styles/withStyles';
 import Img from 'gatsby-image';
 
-import styles from '../../styles/Home.module.scss';
+import * as styles from '../../styles/Home.module.scss';
 
 const Typography = withStyles({
 	root: {
@@ -48,9 +48,7 @@ export default function Home() {
 				I recently graduated 🎉 with my B.S. in Computer Science at{' '}
 				<abbr title="University of California, Los Angeles">UCLA</abbr>, and
 				I’m currently a software engineering intern at{' '}
-				<a href="https://www.marqeta.com/" className={styles.link}>
-					Marqeta
-				</a>.
+				<a href="https://www.marqeta.com/">Marqeta</a>.
 				I plan on continuing my studies at UCLA this fall, pursuing a Master’s
 				degree in CS.
 			</Typography>
@@ -58,38 +56,27 @@ export default function Home() {
 				I’m passionate about learning, building things, and helping other
 				people. During my undergraduate experience at UCLA, I’ve been lucky
 				enough to be explore these passions by being an officer for{' '}
-				<a href="https://hack.uclaacm.com/" className={styles.link}>
-					ACM Hack
-				</a>{' '}
+				<a href="https://hack.uclaacm.com/">ACM Hack</a>{' '}
 				and a lead developer for{' '}
-				<a href="https://teachla.uclaacm.com/" className={styles.link}>
-					ACM TeachLA
-				</a>
+				<a href="https://teachla.uclaacm.com/">ACM TeachLA</a>
 				. I also had the opportunity to be a{' '}
-				<a
-					href="https://ceils.ucla.edu/learningassistants/"
-					className={styles.link}
-				>
+				<a href="https://ceils.ucla.edu/learningassistants/">
 					learning assistant
 				</a>{' '}
 				for undergraduate courses on{' '}
-				<a href="https://polyarch.github.io/cs33/" className={styles.link}>
+				<a href="https://polyarch.github.io/cs33/">
 					computer organization
 				</a>{' '}
 				and{' '}
-				<a
-					href="http://web.cs.ucla.edu/classes/spring20/cs97-1/index.html"
-					className={styles.link}
-				>
+				<a href="https://web.cs.ucla.edu/classes/spring20/cs97-1/index.html">
 					software construction
 				</a>
 				. If you have questions about any of these experiences, I’m happy to
 				chat and answer them!
 			</Typography>
-			<Typography variant="body1" component="p">
+			<Typography>
 				In my free time, I love cooking, baking, watching shows, and{' '}
 				<a
-					className={styles.link}
 					href="https://open.spotify.com/user/jamieliu386"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -110,7 +97,10 @@ export default function Home() {
 				</span>
 				, LaTeX, video games
 			</Typography>
-			<Typography>I also have two cats!</Typography>
+
+			<Typography>
+				I also have two cats!
+			</Typography>
 			<Grid container spacing={4}>
 				{catImages}
 			</Grid>

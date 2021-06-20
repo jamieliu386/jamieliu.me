@@ -10,7 +10,7 @@ import LinkIcon from '@material-ui/icons/Link';
 import SVGImg from '../../SVGImg';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import ProjectInfo from '../ProjectInfo/ProjectInfo';
-import styles from '../../../styles/Project.module.scss';
+import * as styles from '../../../styles/Project.module.scss';
 
 export default function ProjectCard(props) {
 	const { title, desc, tech, github, link, img, dim } = props;

@@ -7,7 +7,7 @@ import SVGImg from '../../SVGImg';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
-import styles from '../../../styles/Project.module.scss';
+import * as styles from '../../../styles/Project.module.scss';
 
 export default function ProjectInfo(props) {
 	const { title, desc, tech, github, link, img, dim, handleClose, open, info } = props;

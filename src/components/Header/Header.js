@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import useTheme from '@material-ui/styles/useTheme';
 
-import styles from '../../styles/Header.module.scss';
+import * as styles from '../../styles/Header.module.scss';
 
 export default function Header() {
 	const theme = useTheme();

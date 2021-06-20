@@ -21,8 +21,8 @@
     "gatsby-transformer-json": "^3.7.1",
     "gatsby-transformer-sharp": "^3.7.1",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "sass": "^1.35.1",
     "webpack": "^5.39.1"
@@ -31,8 +31,8 @@
     "eslint": "^7.3.1",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
-    "husky": "^4.2.5",
-    "prettier": "2.0.5"
+    "husky": "^6.0.0",
+    "prettier": "^2.3.1"
   },
   "keywords": [
     "gatsby"
@@ -47,7 +47,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint --ext js,jsx ."
+    "lint": "eslint --ext js,jsx .",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",

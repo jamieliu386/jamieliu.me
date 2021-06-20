@@ -6,6 +6,8 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import { Helmet } from 'react-helmet';
 
+import '../../styles/global.scss';
+
 const overwrittenTheme = responsiveFontSizes(createMuiTheme({
 	typography: {
 		fontSize: 14,

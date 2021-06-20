@@ -5,6 +5,7 @@ module.exports = {
 		author: '@jamieliu386'
 	},
 	plugins: [
+		'gatsby-plugin-image',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-json',

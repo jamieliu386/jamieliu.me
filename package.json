@@ -10,7 +10,7 @@
     "@material-ui/styles": "^4.10.0",
     "classnames": "^2.2.6",
     "gatsby": "^3.7.2",
-    "gatsby-image": "^3.7.1",
+    "gatsby-plugin-image": "^1.7.1",
     "gatsby-plugin-manifest": "^3.7.1",
     "gatsby-plugin-material-ui": "^3.0.1",
     "gatsby-plugin-offline": "^4.7.1",

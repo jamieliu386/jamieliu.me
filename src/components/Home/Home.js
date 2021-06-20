@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import MuiTypography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/styles/withStyles';
-import Img from 'gatsby-image';
 
 import * as styles from '../../styles/Home.module.scss';
 
@@ -18,13 +18,19 @@ const Typography = withStyles({
 export default function Home() {
 	const data = useStaticQuery(graphql`
 		{
-			catImages: allFile(filter: { relativePath: { glob: "cats/*" } }) {
+			catImages: allFile(
+				filter: {relativePath: {glob: "cats/*"}}
+				sort: {fields: relativePath}
+			) {
 				nodes {
 					relativePath
 					childImageSharp {
-						fluid {
-							...GatsbyImageSharpFluid
-						}
+						gatsbyImageData(
+							layout: FULL_WIDTH
+							aspectRatio: 1
+							transformOptions: {cropFocus: CENTER}
+							placeholder: BLURRED
+						)
 					}
 				}
 			}
@@ -34,7 +40,7 @@ export default function Home() {
 	const catImages = data.catImages.nodes.map(node => {
 		return (
 			<Grid item xs={6} key={node.relativePath}>
-				<Img fluid={{ ...node.childImageSharp.fluid, aspectRatio: 1 }} />
+				<GatsbyImage image={node.childImageSharp.gatsbyImageData} />
 			</Grid>
 		);
 	});

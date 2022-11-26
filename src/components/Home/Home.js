@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import MuiTypography from '@material-ui/core/Typography';
-import withStyles from '@material-ui/styles/withStyles';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import MuiTypography from '@mui/material/Typography';
+import withStyles from '@mui/styles/withStyles';
 
 import * as styles from '../../styles/Home.module.scss';
 
@@ -20,7 +20,7 @@ export default function Home() {
 		{
 			catImages: allFile(
 				filter: {relativePath: {glob: "cats/*"}}
-				sort: {fields: relativePath}
+				sort: {relativePath: ASC}
 			) {
 				nodes {
 					relativePath

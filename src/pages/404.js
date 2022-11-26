@@ -1,11 +1,15 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import Layout, { Head as LayoutHead } from '../components/layout';
 import SEO from '../components/seo';
+
+export const Head = () => <>
+	<SEO title='404: Not found' />
+	<LayoutHead />
+</>;
 
 const NotFoundPage = () =>
 	<Layout>
-		<SEO title='404: Not found' />
 	</Layout>;
 
 export default NotFoundPage;

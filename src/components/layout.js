@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import {
+	ThemeProvider,
+	StyledEngineProvider,
+	createTheme,
+	responsiveFontSizes,
+	adaptV4Theme
+} from '@mui/material/styles';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import { Helmet } from 'react-helmet';
 
 import '../styles/layout.global.scss';
 
-const overwrittenTheme = responsiveFontSizes(createMuiTheme({
+const overwrittenTheme = responsiveFontSizes(createTheme(adaptV4Theme({
 	typography: {
 		fontSize: 14,
 		fontFamily: '"Source Serif Pro", serif',
@@ -56,19 +61,22 @@ const overwrittenTheme = responsiveFontSizes(createMuiTheme({
 			}
 		}
 	}
-}));
+})));
 
+export const Head = () =>
+	<>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
+	</>;
 const Layout = ({ children }) => {
 	return (
-		<MuiThemeProvider theme={overwrittenTheme}>
-			<Helmet>
-				<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
-				<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
-			</Helmet>
-			<Header />
-			<main>{children}</main>
-			<Footer />
-		</MuiThemeProvider>
+		<StyledEngineProvider injectFirst>
+			<ThemeProvider theme={overwrittenTheme}>
+				<Header />
+				<main>{children}</main>
+				<Footer />
+			</ThemeProvider>
+		</StyledEngineProvider>
 	);
 };
 

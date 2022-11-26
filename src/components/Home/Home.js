@@ -20,7 +20,7 @@ export default function Home() {
 		{
 			catImages: allFile(
 				filter: {relativePath: {glob: "cats/*"}}
-				sort: {fields: relativePath}
+				sort: {relativePath: ASC}
 			) {
 				nodes {
 					relativePath

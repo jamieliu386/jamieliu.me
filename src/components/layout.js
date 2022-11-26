@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { MuiThemeProvider, createTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
 import '../styles/layout.global.scss';
 
-const overwrittenTheme = responsiveFontSizes(createMuiTheme({
+const overwrittenTheme = responsiveFontSizes(createTheme({
 	typography: {
 		fontSize: 14,
 		fontFamily: '"Source Serif Pro", serif',

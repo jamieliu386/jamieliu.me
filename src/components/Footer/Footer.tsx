@@ -10,7 +10,7 @@ import * as styles from '../../styles/Footer.module.scss';
 
 export default function Footer() {
 	return (
-		<Container maxWidth='sm' style={{ padding: '40px 20px' }}>
+		<Container component='footer' maxWidth='sm' style={{ padding: '40px 20px' }}>
 			<Box
 				display='flex'
 				flexDirection='row'

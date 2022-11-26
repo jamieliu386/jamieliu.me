@@ -13,14 +13,15 @@ export default function Header() {
 	const xsScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
 	return (
-		<Container maxWidth='sm' style={{ padding: '40px 20px' }}>
+		<Container component='header' maxWidth='sm' style={{ padding: '40px 20px' }}>
 			<Box
+				component='nav'
 				display='flex'
 				flexDirection={xsScreen ? 'column' : 'row'}
 				justifyContent='space-between'
 				alignItems={xsScreen ? 'flex-start' : 'baseline'}
 			>
-				<Link to='/' className={styles.link}>
+				<Link to='/' title='about' className={styles.link}>
 					<Typography variant='h1'>
 						jamie liu
 					</Typography>
@@ -31,17 +32,19 @@ export default function Header() {
 					alignItems='center'
 					flexWrap={xsScreen ? 'wrap' : undefined}
 				>
-					<Link to='/' activeClassName={styles.active} className={styles.link}>
-						<Typography variant='h6'>about</Typography>
-					</Link>
-					<Typography variant='h6'>/</Typography>
-					<Link to='/projects/' activeClassName={styles.active} className={styles.link}>
-						<Typography variant='h6'>projects</Typography>
-					</Link>
-					<Typography variant='h6'>/</Typography>
-					<a href='/resume.pdf' target='_blank' rel="noopener noreferrer" className={styles.link}>
-						<Typography variant='h6'>résumé</Typography>
-					</a>
+					<Typography component='div' variant='h6'>
+						<Link to='/' activeClassName={styles.active} className={styles.link}>
+							about
+						</Link>
+						/
+						<Link to='/projects/' activeClassName={styles.active} className={styles.link}>
+							projects
+						</Link>
+						/
+						<a href='/resume.pdf' target='_blank' rel="noopener noreferrer" className={styles.link}>
+							résumé
+						</a>
+					</Typography>
 				</Box>
 			</Box>
 		</Container>

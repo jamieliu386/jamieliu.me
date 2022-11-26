@@ -49,7 +49,7 @@ const Projects = () => {
 
 	return (
 		<Container maxWidth='sm'>
-			<Typography variant='body1'>
+			<Typography>
 				some of my projects!
 			</Typography>
 			{projectCards}

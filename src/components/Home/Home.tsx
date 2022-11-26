@@ -16,8 +16,8 @@ const Typography = withStyles({
 })(MuiTypography);
 
 export default function Home() {
-	const data = useStaticQuery(graphql`
-		{
+	const data: Queries.CatImagesQuery = useStaticQuery(graphql`
+		query CatImages {
 			catImages: allFile(
 				filter: {relativePath: {glob: "cats/*"}}
 				sort: {relativePath: ASC}
@@ -40,7 +40,10 @@ export default function Home() {
 	const catImages = data.catImages.nodes.map(node => {
 		return (
 			<Grid item xs={6} key={node.relativePath}>
-				<GatsbyImage image={node.childImageSharp.gatsbyImageData} />
+				<GatsbyImage
+					alt="cat" // TODO: better alt texts
+					image={node!.childImageSharp!.gatsbyImageData}
+				/>
 			</Grid>
 		);
 	});

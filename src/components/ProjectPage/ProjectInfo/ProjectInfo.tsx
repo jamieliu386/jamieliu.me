@@ -1,15 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import Dialog from '@mui/material/Dialog';
+import Dialog, { DialogProps } from '@mui/material/Dialog';
 import Typography from '@mui/material/Typography';
-import SVGImg from '../../SVGImg';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkIcon from '@mui/icons-material/Link';
-import * as styles from '../../../styles/Project.module.scss';
 
-export default function ProjectInfo(props) {
+import SVGImg from '../../SVGImg';
+import * as styles from '../../../styles/Project.module.scss';
+import type { Project } from '../projects';
+
+export type ProjectInfoProps = Project & {
+	open: DialogProps['open'],
+	handleClose?: () => void,
+};
+
+export default function ProjectInfo(props: ProjectInfoProps) {
 	const { title, desc, tech, github, link, img, dim, handleClose, open, info } = props;
 
 	const isSmall = useMediaQuery('(max-width:500px)');
@@ -59,19 +65,3 @@ export default function ProjectInfo(props) {
 		</Dialog>
 	);
 }
-
-ProjectInfo.propTypes = {
-	title: PropTypes.string.isRequired,
-	desc: PropTypes.string.isRequired,
-	tech: PropTypes.string.isRequired,
-	github: PropTypes.string.isRequired,
-	link: PropTypes.string.isRequired,
-	img: PropTypes.string.isRequired,
-	dim: PropTypes.shape({
-		height: PropTypes.number.isRequired,
-		width: PropTypes.number.isRequired
-	}).isRequired,
-	info: PropTypes.arrayOf(PropTypes.string).isRequired,
-	handleClose: PropTypes.func.isRequired,
-	open: PropTypes.bool.isRequired
-};

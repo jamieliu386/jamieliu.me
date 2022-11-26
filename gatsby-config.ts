@@ -1,8 +1,14 @@
-module.exports = {
+import type { GatsbyConfig } from 'gatsby';
+
+const config: GatsbyConfig = {
 	siteMetadata: {
 		title: 'Jamie Liu',
 		description: 'Jamie’s personal website.',
 		author: '@jamieliu386'
+	},
+	graphqlTypegen: {
+		typesOutputPath: 'src/gatsby-types.d.ts',
+		generateOnBuild: true
 	},
 	plugins: [
 		'gatsby-plugin-image',
@@ -52,3 +58,5 @@ module.exports = {
 		// 'gatsby-plugin-offline',
 	]
 };
+
+export default config;

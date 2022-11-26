@@ -1,6 +1,12 @@
 import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import PropTypes from 'prop-types';
+import { GatsbyImage, GatsbyImageProps } from 'gatsby-plugin-image';
+
+export type SVGImgProps = Omit<GatsbyImageProps, 'alt' | 'image'> & {
+	alt?: string,
+	width: number,
+	height: number,
+	src: string,
+};
 
 /*
  * A version of gatsby-image's React component that works with SVGs. Only the
@@ -16,9 +22,10 @@ import PropTypes from 'prop-types';
  */
 
 // width and height should be gotten from the <svg> element in the SVG files.
-export default function SVGImg({ width, height, src, ...props }) {
+export default function SVGImg({ alt = '', width, height, src, ...props }: SVGImgProps) {
 	return (
 		<GatsbyImage
+			alt={alt}
 			image={{
 				layout: 'fullWidth',
 				width,
@@ -36,9 +43,3 @@ export default function SVGImg({ width, height, src, ...props }) {
 		/>
 	);
 }
-
-SVGImg.propTypes = {
-	width: PropTypes.number.isRequired,
-	height: PropTypes.number.isRequired,
-	src: PropTypes.string.isRequired
-};

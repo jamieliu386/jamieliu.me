@@ -6,10 +6,12 @@ import Typography from '@mui/material/Typography';
 import ProjectCard from './ProjectCard/ProjectCard';
 
 const Projects = () => {
-	const data = useStaticQuery(graphql`
-		{
+	const data: Queries.ProjectPageQuery = useStaticQuery(graphql`
+		query ProjectPage {
 			allProjectsJson {
 				nodes {
+					id
+					jsonId
 					title
 					desc
 					tech
@@ -31,15 +33,16 @@ const Projects = () => {
 	`);
 
 	const projectsList = data.allProjectsJson.nodes;
-	const projectCards = projectsList.map(({ title, desc, tech, github, link, img, dim, info }) => {
+	const projectCards = projectsList.map(({ id, jsonId, title, desc, tech, github, link, img, dim, info }) => {
 		return <ProjectCard
-			key={title}
+			key={id}
+			id={jsonId}
 			title={title}
 			desc={desc}
 			tech={tech}
 			github={github}
 			link={link}
-			img={img.publicURL}
+			img={img!.publicURL!}
 			dim={dim}
 			info={info} />;
 	});

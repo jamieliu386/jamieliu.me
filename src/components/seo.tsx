@@ -6,10 +6,14 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, title }) {
+export type SEOProps = {
+	title: string,
+	description?: string,
+};
+
+function SEO({ title, description = '' }: SEOProps) {
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -38,16 +42,5 @@ function SEO({ description, title }) {
 		<meta property="twitter:description" content={metaDescription} />
 	</>;
 }
-
-SEO.defaultProps = {
-	description: ``
-};
-
-SEO.propTypes = {
-	description: PropTypes.string,
-	lang: PropTypes.string,
-	meta: PropTypes.arrayOf(PropTypes.object),
-	title: PropTypes.string.isRequired
-};
 
 export default SEO;

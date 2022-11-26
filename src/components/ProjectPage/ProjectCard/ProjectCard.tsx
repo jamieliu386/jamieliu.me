@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -7,12 +6,14 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkIcon from '@mui/icons-material/Link';
-import SVGImg from '../../SVGImg';
 import useMediaQuery from '@mui/material/useMediaQuery';
+
+import type { Project } from '../projects';
+import SVGImg from '../../SVGImg';
 import ProjectInfo from '../ProjectInfo/ProjectInfo';
 import * as styles from '../../../styles/Project.module.scss';
 
-export default function ProjectCard(props) {
+export default function ProjectCard(props: Project) {
 	const { title, desc, tech, github, link, img, dim } = props;
 
 	// modal stuff
@@ -59,17 +60,3 @@ export default function ProjectCard(props) {
 		</Card>
 	);
 }
-
-ProjectCard.propTypes = {
-	title: PropTypes.string.isRequired,
-	desc: PropTypes.string.isRequired,
-	tech: PropTypes.string.isRequired,
-	github: PropTypes.string.isRequired,
-	link: PropTypes.string.isRequired,
-	img: PropTypes.string.isRequired,
-	dim: PropTypes.shape({
-		height: PropTypes.number.isRequired,
-		width: PropTypes.number.isRequired
-	}).isRequired,
-	info: PropTypes.arrayOf(PropTypes.string).isRequired
-};

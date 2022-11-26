@@ -1,24 +1,29 @@
 module.exports = {
+	root: true,
 	env: {
 		browser: true,
 		es6: true,
 		node: true
 	},
+	globals: {
+		Queries: 'readonly'
+	},
 	extends: [
 		'eslint:recommended',
-		'plugin:react/recommended'
+		'plugin:react/recommended',
+		'plugin:@typescript-eslint/recommended'
 	],
-	parserOptions: {
-		ecmaVersion: 2019,
-		ecmaFeatures: {
-			jsx: true
-		},
-		sourceType: 'module'
-	},
+	parser: '@typescript-eslint/parser',
 	plugins: [
 		'react',
-		'react-hooks'
+		'react-hooks',
+		'@typescript-eslint'
 	],
+	settings: {
+		react: {
+			version: '18.2.0'
+		}
+	},
 	rules: {
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'warn',
@@ -302,10 +307,5 @@ module.exports = {
 		'symbol-description': 'error',
 		'template-curly-spacing': ['error', 'never'],
 		'yield-star-spacing': ['error', 'after']
-	},
-	settings: {
-		react: {
-			version: '16.6.1'
-		}
 	}
 };

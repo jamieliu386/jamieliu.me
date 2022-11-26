@@ -8,7 +8,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 import * as styles from '../../styles/Footer.module.scss';
 
-export default function Header() {
+export default function Footer() {
 	return (
 		<Container maxWidth='sm' style={{ padding: '40px 20px' }}>
 			<Box

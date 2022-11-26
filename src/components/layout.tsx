@@ -1,11 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactNode } from 'react';
 import {
 	ThemeProvider,
 	StyledEngineProvider,
 	createTheme,
-	responsiveFontSizes,
-	adaptV4Theme
+	responsiveFontSizes
 } from '@mui/material/styles';
 
 import Header from './Header/Header';
@@ -13,7 +11,7 @@ import Footer from './Footer/Footer';
 
 import '../styles/layout.global.scss';
 
-const overwrittenTheme = responsiveFontSizes(createTheme(adaptV4Theme({
+const overwrittenTheme = responsiveFontSizes(createTheme({
 	typography: {
 		fontSize: 14,
 		fontFamily: '"Source Serif Pro", serif',
@@ -47,28 +45,35 @@ const overwrittenTheme = responsiveFontSizes(createTheme(adaptV4Theme({
 		},
 		button: { fontFamily: '"Source Sans Pro", sans-serif' }
 	},
-	props: {
+	components: {
 		MuiButtonBase: {
-			disableRipple: true // remove all ripple effects
-		}
-	},
-	shadows: ['none'], // remove box shadows
-	overrides: {
+			defaultProps: {
+				disableRipple: true
+			}
+		},
 		MuiDialog: {
-			paper: {
-				padding: '10px 20px',
-				width: 600
+			styleOverrides: {
+				paper: {
+					padding: '10px 20px',
+					width: 600
+				}
 			}
 		}
 	}
-})));
+	// shadows: ['none'], // remove box shadows
+}));
 
 export const Head = () =>
 	<>
 		<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
 	</>;
-const Layout = ({ children }) => {
+
+export type LayoutProps = {
+	children: ReactNode,
+};
+
+const Layout = ({ children }: LayoutProps) => {
 	return (
 		<StyledEngineProvider injectFirst>
 			<ThemeProvider theme={overwrittenTheme}>
@@ -78,10 +83,6 @@ const Layout = ({ children }) => {
 			</ThemeProvider>
 		</StyledEngineProvider>
 	);
-};
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired
 };
 
 export default Layout;

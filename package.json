@@ -56,5 +56,8 @@
   },
   "bugs": {
     "url": "https://github.com/jamieliu386/issues"
+  },
+  "resolutions": {
+    "mozjpeg": "7.1.1"
   }
 }

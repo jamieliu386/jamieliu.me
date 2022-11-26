@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '@material-ui/core/Box';
-import Dialog from '@material-ui/core/Dialog';
-import Typography from '@material-ui/core/Typography';
+import Box from '@mui/material/Box';
+import Dialog from '@mui/material/Dialog';
+import Typography from '@mui/material/Typography';
 import SVGImg from '../../SVGImg';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkIcon from '@material-ui/icons/Link';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkIcon from '@mui/icons-material/Link';
 import * as styles from '../../../styles/Project.module.scss';
 
 export default function ProjectInfo(props) {

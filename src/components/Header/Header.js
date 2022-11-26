@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import useTheme from '@material-ui/styles/useTheme';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import useTheme from '@mui/styles/useTheme';
 
 import * as styles from '../../styles/Header.module.scss';
 
 export default function Header() {
 	const theme = useTheme();
-	const xsScreen = useMediaQuery(theme.breakpoints.down('xs'));
+	const xsScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
 	return (
 		<Container maxWidth='sm' style={{ padding: '40px 20px' }}>

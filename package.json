@@ -5,14 +5,17 @@
   "version": "0.1.0",
   "author": "Jamie Liu <jamieliu386@gmail.com>",
   "dependencies": {
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/styles": "^4.11.5",
+    "@babel/core": "^7.20.2",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.15",
+    "@mui/material": "^5.10.15",
+    "@mui/styles": "^5.10.15",
     "classnames": "^2.2.6",
     "gatsby": "v4",
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-manifest": "^4",
-    "gatsby-plugin-material-ui": "^3.0.1",
+    "gatsby-plugin-material-ui": "^4.1.0",
     "gatsby-plugin-offline": "^5",
     "gatsby-plugin-sass": "^5",
     "gatsby-plugin-sharp": "^4",
@@ -54,8 +57,5 @@
   },
   "bugs": {
     "url": "https://github.com/jamieliu386/issues"
-  },
-  "resolutions": {
-    "mozjpeg": "7.1.1"
   }
 }

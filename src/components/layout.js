@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MuiThemeProvider, createTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import {
+	ThemeProvider,
+	StyledEngineProvider,
+	createTheme,
+	responsiveFontSizes,
+	adaptV4Theme
+} from '@mui/material/styles';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
 import '../styles/layout.global.scss';
 
-const overwrittenTheme = responsiveFontSizes(createTheme({
+const overwrittenTheme = responsiveFontSizes(createTheme(adaptV4Theme({
 	typography: {
 		fontSize: 14,
 		fontFamily: '"Source Serif Pro", serif',
@@ -55,7 +61,7 @@ const overwrittenTheme = responsiveFontSizes(createTheme({
 			}
 		}
 	}
-}));
+})));
 
 export const Head = () =>
 	<>
@@ -64,11 +70,13 @@ export const Head = () =>
 	</>;
 const Layout = ({ children }) => {
 	return (
-		<MuiThemeProvider theme={overwrittenTheme}>
-			<Header />
-			<main>{children}</main>
-			<Footer />
-		</MuiThemeProvider>
+		<StyledEngineProvider injectFirst>
+			<ThemeProvider theme={overwrittenTheme}>
+				<Header />
+				<main>{children}</main>
+				<Footer />
+			</ThemeProvider>
+		</StyledEngineProvider>
 	);
 };
 

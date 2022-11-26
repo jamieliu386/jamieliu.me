@@ -1,12 +1,16 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import Layout, { Head as LayoutHead } from '../components/layout';
 import SEO from '../components/seo';
 import Home from '../components/Home/Home';
 
+export const Head = () => <>
+	<SEO title='Home' />
+	<LayoutHead />
+</>;
+
 const IndexPage = () =>
 	<Layout>
-		<SEO title='Home' />
 		<Home />
 	</Layout>;
 

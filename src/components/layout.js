@@ -4,7 +4,6 @@ import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import { Helmet } from 'react-helmet';
 
 import '../styles/layout.global.scss';
 
@@ -58,13 +57,14 @@ const overwrittenTheme = responsiveFontSizes(createMuiTheme({
 	}
 }));
 
+export const Head = () =>
+	<>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
+	</>;
 const Layout = ({ children }) => {
 	return (
 		<MuiThemeProvider theme={overwrittenTheme}>
-			<Helmet>
-				<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
-				<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet" />
-			</Helmet>
 			<Header />
 			<main>{children}</main>
 			<Footer />

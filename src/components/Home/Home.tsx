@@ -54,16 +54,14 @@ export default function Home() {
 				Hi, my name is Jamie!
 			</Typography>
 			<Typography>
-				I recently graduated 🎉 with my B.S. in Computer Science at{' '}
-				<abbr title="University of California, Los Angeles">UCLA</abbr>, and
-				I’m currently a software engineering intern at{' '}
+				I’m currently a software engineer at{' '}
 				<a href="https://www.marqeta.com/">Marqeta</a>.
-				I plan on continuing my studies at UCLA this fall, pursuing a Master’s
-				degree in CS.
+				I graduated 🎉 with my B.S. in Computer Science at{' '}
+				<abbr title="University of California, Los Angeles">UCLA</abbr> in 2021.
 			</Typography>
 			<Typography>
 				I’m passionate about learning, building things, and helping other
-				people. During my undergraduate experience at UCLA, I’ve been lucky
+				people. During undergad, I was lucky
 				enough to be explore these passions by being an officer for{' '}
 				<a href="https://hack.uclaacm.com/">ACM Hack</a>{' '}
 				and a lead developer for{' '}

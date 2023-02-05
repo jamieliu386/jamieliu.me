@@ -61,7 +61,7 @@ export default function Home() {
 			</Typography>
 			<Typography>
 				I’m passionate about learning, building things, and helping other
-				people. During undergad, I was lucky
+				people. During undergrad, I was lucky
 				enough to be explore these passions by being an officer for{' '}
 				<a href="https://hack.uclaacm.com/">ACM Hack</a>{' '}
 				and a lead developer for{' '}
